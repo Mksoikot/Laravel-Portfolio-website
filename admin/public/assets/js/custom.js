@@ -50,11 +50,7 @@ function getServiceData() {
                     $("#servicedeleteId").attr("data-id", id);
                     $("#deleteModal").modal("show");
                 });
-                //Service Delete Modal yes Btn
-                $("#servicedeleteId").click(function() {
-                    var id = $(this).data("id");
-                    ServiceDelete(id);
-                });
+
 
                 //Service Table Edit Icon Click
                 $(".serviceEditbtn").click(function() {
@@ -62,15 +58,6 @@ function getServiceData() {
                     $("#SeditId").html(id);
                     ServiceUpdateDetails(id);
                     $("#editModal").modal("show");
-                });
-
-                //Service Update Modal yes Btn
-                $("#serviceEditconfrimBtn").click(function() {
-                    var id = $("#SeditId").html();
-                    var name = $("#serviceNameID").val();
-                    var des = $("#serviceDesID").val();
-                    var img = $("#serviceImgID").val();
-                    ServiceUpdate(id, name, des, img);
                 });
             } else {
                 $("#loaderDiv").addClass("d-none");
@@ -82,6 +69,12 @@ function getServiceData() {
             $("#wrongDiv").removeClass("d-none");
         });
 }
+
+//Service Delete Modal yes Btn
+$("#servicedeleteId").click(function() {
+    var id = $(this).data("id");
+    ServiceDelete(id);
+});
 //Service Delete
 function ServiceDelete(deleteId) {
     axios
@@ -89,17 +82,25 @@ function ServiceDelete(deleteId) {
             id: deleteId,
         })
         .then(function(response) {
-            if (response.data == 1) {
-                $("#deleteModal").modal("hide");
-                toastr.success("Delete Successful.");
-                window.location.reload();
+            if (response.status == 200) {
+                if (response.data == 1) {
+                    $("#deleteModal").modal("hide");
+                    toastr.success("Delete Successful.");
+                    window.location.reload();
+                } else {
+                    $("#deleteModal").modal("hide");
+                    toastr.error("Delete Failed.");
+                    getServiceData();
+                }
             } else {
                 $("#deleteModal").modal("hide");
-                toastr.error("Delete Failed.");
-                getServiceData();
+                toastr.error("Something Went Wrong");
             }
         })
-        .catch(function(error) {});
+        .catch(function(error) {
+            $("#deleteModal").modal("hide");
+            toastr.error("Something Went Wrong");
+        });
 }
 
 //Each Service Update Details
@@ -128,6 +129,15 @@ function ServiceUpdateDetails(detailsId) {
         });
 }
 
+//Service Update Modal yes Btn
+$("#serviceEditconfrimBtn").click(function() {
+    var id = $("#SeditId").html();
+    var name = $("#serviceNameID").val();
+    var des = $("#serviceDesID").val();
+    var img = $("#serviceImgID").val();
+    ServiceUpdate(id, name, des, img);
+});
+
 // Service Update
 function ServiceUpdate(serviceID, serviceName, serviceDes, serviceImg) {
 
@@ -146,18 +156,26 @@ function ServiceUpdate(serviceID, serviceName, serviceDes, serviceImg) {
                 img: serviceImg
             })
             .then(function(response) {
-                if (response.data == 1) {
-                    $("#editModal").modal("hide");
-                    toastr.success("Update Successful.");
-                    getServiceData();
+
+                if (response.status = 200) {
+                    if (response.data == 1) {
+                        $("#editModal").modal("hide");
+                        toastr.success("Update Successful.");
+                        getServiceData();
+                    } else {
+                        $("#editModal").modal("hide");
+                        toastr.error("Update Failed !");
+                        getServiceData();
+                    }
                 } else {
                     $("#editModal").modal("hide");
-                    toastr.error("Update Failed !");
-                    getServiceData();
+                    toastr.error("Something Went Wrong");
                 }
+
             })
             .catch(function(error) {
-
+                $("#editModal").modal("hide");
+                toastr.error("Something Went Wrong");
             });
     }
 
