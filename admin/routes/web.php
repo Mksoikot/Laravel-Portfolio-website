@@ -22,3 +22,4 @@ Route::get('/admin/getServiceData','ServiceController@getServiceData');
 Route::post('/admin/ServiceDelete','ServiceController@ServiceDelete');
 Route::post('/admin/ServiceDetails','ServiceController@getServiceDetails');
 Route::post('/admin/ServiceUpdate','ServiceController@ServiceUpdate');
+Route::post('/admin/ServiceAdd','ServiceController@ServiceAdd');
