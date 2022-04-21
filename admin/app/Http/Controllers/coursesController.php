@@ -12,7 +12,7 @@ class coursesController extends Controller
         return view('courses');
     }
     function getCourseData(){
-       $result= json_encode( DB::table('courses')->get());
+       $result= json_encode( DB::table('courses')->orderBy('id','desc')->get());
        return $result;
     // dd($result);
     }

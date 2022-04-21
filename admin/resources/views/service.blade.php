@@ -63,8 +63,14 @@
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Service</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                <div class="modal-body p-4 text-center">
-                <h6 id="SeditId" class="mt-4"></h6>
+                <h6 id="SeditId" class="mt-4 d-none"></h6>
                 <div id="serviceEditForm" class="d-none w-100">
                 <input type="text" id="serviceNameID" class="form-control mb-4" placeholder="Service Name"/>
                 <input type="text" id="serviceDesID" class="form-control mb-4" placeholder="Service Des"/>
@@ -170,7 +176,7 @@ function getServiceData() {
 
 
                 // DataTable show
-                $("#serviceDataTable").DataTable();
+                $("#serviceDataTable").DataTable({'order':false});
                 $(".dataTables_length").addClass("bs-select");
 
             } else {

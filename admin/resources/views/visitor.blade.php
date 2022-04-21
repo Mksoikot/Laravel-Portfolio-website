@@ -37,7 +37,7 @@
 
 // Visitor Page Table
 $(document).ready(function() {
-    $("#VisitorDt").DataTable();
+    $("#VisitorDt").DataTable({"order":false});
     $(".dataTables_length").addClass("bs-select");
 });
 
