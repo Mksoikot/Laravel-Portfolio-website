@@ -6,7 +6,7 @@
     <div class="row">
     <div class="col-md-12 p-5">
         <button id="addNewBtnId" style="float: right;font-size: 12px;" class="btn my-2 btn-sm btn-danger"> <i class="fas fa-plus"></i> Add New</button>
-    <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table id="serviceDataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
         <tr>
           <th class="th-sm">Image</th>
@@ -110,7 +110,7 @@
 
 @section('script')
     <script type="text/javascript">
-       getServiceData();
+      getServiceData();
        // To Service Page Table
 
 function getServiceData() {
@@ -124,6 +124,7 @@ function getServiceData() {
                 $("#mainDiv").removeClass("d-none");
                 $("#loaderDiv").addClass("d-none");
 
+                $("#serviceDataTable").DataTable().destroy();
                 $("#service_table").empty();
 
                 var jsonData = response.data;
@@ -166,6 +167,12 @@ function getServiceData() {
                     ServiceUpdateDetails(id);
                     $("#editModal").modal("show");
                 });
+
+
+                // DataTable show
+                $("#serviceDataTable").DataTable();
+                $(".dataTables_length").addClass("bs-select");
+
             } else {
                 $("#loaderDiv").addClass("d-none");
                 $("#wrongDiv").removeClass("d-none");

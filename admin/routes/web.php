@@ -30,7 +30,7 @@ Route::post('/admin/ServiceAdd','ServiceController@ServiceAdd');
 
 Route::get('/courses','coursesController@CoursesIndex');
 Route::get('/admin/CourseData','coursesController@getCourseData');
-Route::post('/admin/CourseDetails','coursesController@getCourseDetails');
+Route::post('/admin/CourseDetails','coursesController@getCouresDetails');
 Route::post('/admin/CourseDelete','coursesController@CourseDelete');
 Route::post('/admin/CourseUpdate','coursesController@CourseUpdate');
 Route::post('/admin/CourseAdd','coursesController@CourseAdd');
