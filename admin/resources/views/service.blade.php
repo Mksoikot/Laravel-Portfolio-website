@@ -182,6 +182,7 @@ $("#servicedeleteId").click(function() {
     var id = $(this).data("id");
     ServiceDelete(id);
 });
+
 //Service Delete
 function ServiceDelete(deleteId) {
     $("#servicedeleteId").html("<div class='spinner-border spinner-border-sm' role='status'></div>")
