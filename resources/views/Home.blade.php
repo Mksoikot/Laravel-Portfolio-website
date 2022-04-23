@@ -9,6 +9,8 @@
 
 @include('component.HomeCourse');
 
+@include('component.HomeProject');
+
 
 
 
