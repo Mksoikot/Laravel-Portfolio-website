@@ -39,7 +39,7 @@ Route::post('/admin/CourseAdd','coursesController@CourseAdd');
 
 Route::get('/project','projectController@PorjectIndex');
 Route::get('/admin/projectData','projectController@getProjectData');
-// Route::post('/admin/projectDetails','projectController@getProjectDetails');
+Route::post('/admin/projectDetails','projectController@getProjectDetails');
 Route::post('/admin/projectDelete','projectController@ProjectDelete');
 Route::post('/admin/projectUpdate','projectController@ProjectUpdate');
 Route::post('/admin/projectAdd','projectController@ProjectAdd');

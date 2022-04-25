@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ServiceModel;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
@@ -49,7 +50,9 @@ class ServiceController extends Controller
         $name= $request->input('name');
         $des= $request->input('des');
         $img = $request->input('img');
-        $result= ServiceModel::insert(['service_name'=>$name,'service_des'=>$des,'service_img'=>$img]);
+        // $result= ServiceModel::insert(['service_name'=>$name,'service_des'=>$des,'service_img'=>$img]);
+        $result= DB::insert('INSERT INTO `service`(`service_name`, `service_des`, `service_img`) VALUES (?,?,?)',
+        [$name,$des,$img]);
         if($result==true){
             return 1;
         }
