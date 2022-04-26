@@ -11,6 +11,8 @@
 
 @include('component.HomeProject');
 
+@include('component.HomeContact');
+
 
 
 
