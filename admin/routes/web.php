@@ -50,3 +50,11 @@ Route::get('/contact','contactController@ContactIndex');
 Route::get('/admin/contactData','contactController@getContactData');
 Route::post('/admin/contactDelete','contactController@ContactDelete');
 
+// Admin Panel Review managment
+Route::get('/review','ReviewController@ReviewIndex');
+Route::get('/admin/getreviewData','ReviewController@getReviewData');
+Route::post('/admin/ReviewDelete','ReviewController@ReviewDelete');
+Route::post('/admin/ReviewDetails','ReviewController@getReviewDetails');
+Route::post('/admin/ReviewUpdate','ReviewController@ReviewUpdate');
+Route::post('/admin/ReviewAdd','ReviewController@ReviewAdd');
+

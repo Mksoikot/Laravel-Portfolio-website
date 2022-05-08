@@ -13,6 +13,10 @@
 
 @include('component.HomeContact');
 
+@include('component.HomeReview');
+
+@include('Layout.footer');
+
 
 
 

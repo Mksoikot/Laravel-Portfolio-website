@@ -5,7 +5,7 @@
             <h5 class="help-line-title"> <i class="fas icon-custom-color fa-headphones-alt"></i> হেলপ লাইন </h5>
             <h5 class="help-line-title m-0">  ০১৭৭৪৬৮৮১৫৯ </h5>
         </div>
-        <div class="col-md-4 contact-form">
+        <div class="col-md-4 contact-form" style="margin-bottom: 70px;">
                 <h5 class="service-card-title">যোগাযোগ করুন </h5>
                 <div class="form-group ">
                     <input id="contactNameId" type="text" class="form-control w-100" placeholder="আপনার নাম">
