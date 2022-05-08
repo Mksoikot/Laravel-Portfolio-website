@@ -6,9 +6,9 @@
         <div class="col-md-4 thumbnail-container">
                 <img src="{{$courseData->course_img}}" alt="Avatar" class="thumbnail-image ">
                 <div class="thumbnail-middle">
-                    <h1 class="thumbnail-title"> {{$courseData->course_name}}  </h1>
+                    <h1 class="thumbnail-title"> {{$courseData->course_name}}</h1>
                     <h1 class="thumbnail-subtitle">{{$courseData->course_fee}} | {{$courseData->course_totalenroll}}</h1>
-                    <h1 class="thumbnail-subtitle">{{$courseData->course_totalclass}} </h1>
+                    <h1 class="thumbnail-subtitle">{{$courseData->course_totalclass}}</h1>
                     <a target="_blank" href="{{$courseData->course_link}} " class="normal-btn btn">শুরু করুন</a>
                 </div>
         </div>

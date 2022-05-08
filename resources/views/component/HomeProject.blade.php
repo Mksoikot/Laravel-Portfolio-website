@@ -5,7 +5,6 @@
         <div class="row">
 
             <div id="one"  class="owl-carousel mb-4 owl-theme">
-
                 @foreach ($projectData as $projectData)
                 <div class="item m-1 card">
                     <div class="text-center">

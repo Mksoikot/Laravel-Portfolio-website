@@ -17,13 +17,4 @@
 
 @include('Layout.footer');
 
-
-
-
-
-
-
-
-
-
 @endsection
