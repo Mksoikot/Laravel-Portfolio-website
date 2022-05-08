@@ -1,5 +1,5 @@
 @extends('Layout.app')
-
+@section('title','Course')
 @section('content')
     <div id="MainDivCourse" class="container d-none">
         <div class="row">
