@@ -21,3 +21,5 @@ Route::get('/Courses','CourseController@CoursePage');
 Route::get('/Policy','PolicyController@PolicyPage');
 Route::get('/Projects','ProjectController@ProjectPage');
 Route::get('/Terms','TermsController@TermPage');
+
+Route::get('/Contact','ContactController@ContactPage');

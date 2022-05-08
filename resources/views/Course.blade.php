@@ -1,6 +1,6 @@
 
 @extends('Layout.app')
-
+@section('title','Course')
 @section('content')
 
 @include('component.Allcourse');
