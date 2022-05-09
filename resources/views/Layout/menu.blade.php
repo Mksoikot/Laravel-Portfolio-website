@@ -22,8 +22,8 @@
                 <a class="nav-link nav-font" href="{{url('/Contact')}}">যোগাযোগ</a>
             </li>
         </ul>
-        {{-- <form class="form-inline my-2 my-lg-0">
-            <button class="normal-btn btn" >সাইন ইন</button>
-        </form> --}}
+        <form class="form-inline my-2 my-lg-0">
+            <a href="admin/Login" class="normal-btn btn" >সাইন ইন</a>
+        </form>
     </div>
 </nav>
